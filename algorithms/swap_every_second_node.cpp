@@ -32,11 +32,29 @@ Node* swapEverySecondNode(Node* head)
     return new_head;
 }
 
+void swapEverySecondNodeByValue(Node* head)
+{
+    if (!head || !head->getNext())
+        return;
+    Node* current = head;
+    while (current && current->getNext()) {
+        int temp = current->getValue();
+        current->setValue(current->getNext()->getValue());
+        current->getNext()->setValue(temp);
+        current = current->getNext()->getNext();
+    }
+}
+
 int main() {
     std::vector<int> all_nodes = {1, 2, 3, 4, 5, 6, 7, 8, 9};
     Node* node = new Node(all_nodes);
     std::cout << node->getString() << std::endl;
     node = swapEverySecondNode(node);
     std::cout << node->getString() << std::endl;
+
+    Node* node2 = new Node(all_nodes);
+    std::cout << node2->getString() << std::endl;
+    swapEverySecondNodeByValue(node2);
+    std::cout << node2->getString() << std::endl;
     return 0;
 }

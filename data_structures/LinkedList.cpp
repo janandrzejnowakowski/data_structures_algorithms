@@ -5,9 +5,10 @@
 #include <vector>
 #include "LinkedList.h"
 
-Node::Node() : value(0), next(nullptr) {};
-Node::Node(int val) : value(val), next(nullptr) {};
-Node::Node(int val, Node* node) : value(val), next(node) {};
+Node::Node() : value(0), next(nullptr) {}
+Node::Node(int val) : value(val), next(nullptr) {}
+Node::Node(int val, Node* node) : value(val), next(node) {}
+
 Node::Node(std::vector<int> vec)
 {
     value = vec.empty() ? 0 : vec[0];

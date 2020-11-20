@@ -6,5 +6,4 @@ General:
 
 Linked list:
 
-swapEverySecondNode
 hasLoop
