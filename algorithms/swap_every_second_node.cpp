@@ -45,17 +45,3 @@ void swapEverySecondNodeByValue(Node* head)
         current = current->getNext()->getNext();
     }
 }
-
-int main() {
-    std::vector<int> all_nodes = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-    Node* node = new Node(all_nodes);
-    std::cout << node->getString() << std::endl;
-    node = swapEverySecondNode(node);
-    std::cout << node->getString() << std::endl;
-
-    Node* node2 = new Node(all_nodes);
-    std::cout << node2->getString() << std::endl;
-    swapEverySecondNodeByValue(node2);
-    std::cout << node2->getString() << std::endl;
-    return 0;
-}
