@@ -1,7 +1,6 @@
 General:
 
-1. Add tests (gtest?)
-2. Add templates where possible.
+1. Add templates where possible.
 
 Linked list:
 

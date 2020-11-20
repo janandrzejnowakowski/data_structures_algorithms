@@ -12,8 +12,9 @@ Node::Node(int val, Node* node) : value(val), next(node) {}
 
 Node::Node(std::vector<int> vec)
 {
-    value = vec.empty() ? 0 : vec[0];
     Node* current = this;
+    current->value = vec.empty() ? 0 : vec[0];
+    current->setNext(nullptr);
     for (unsigned i = 1; i < vec.size(); ++i)
     {
         current->setNext(new Node(vec[i]));
