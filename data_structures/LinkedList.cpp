@@ -5,6 +5,7 @@
 
 #include <vector>
 #include "LinkedList.h"
+#include "algorithms/linked_list_algorithms.h"
 
 Node::Node() : value(0), next(nullptr) {}
 Node::Node(int val) : value(val), next(nullptr) {}
@@ -49,6 +50,9 @@ void Node::setNext(Node* node)
 
 std::string Node::getString()
 {
+    if (hasLoop(this))
+        return "Linked list has a loop!";
+
     std::string ret = std::to_string(value);
     Node* current = getNext();
     while (current)

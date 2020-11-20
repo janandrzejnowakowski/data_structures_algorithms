@@ -1,7 +1,0 @@
-General:
-
-1. Add templates where possible.
-
-Linked list:
-
-hasLoop

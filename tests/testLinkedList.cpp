@@ -4,11 +4,11 @@
 // testLinkedList.cpp
 
 #include "data_structures/LinkedList.h"
-#include "algorithms/swap_every_second_node.h"
+#include "algorithms/linked_list_algorithms.h"
 #include <gtest/gtest.h>
 #include <iostream>
 
-TEST(LinkedListTest, ConstructorTest) {
+TEST(LinkedList, Constructor) {
     std::vector<int> all_nodes = {};
     Node* node = new Node(all_nodes);
     EXPECT_TRUE(node->getValue() == 0);
@@ -23,7 +23,7 @@ TEST(LinkedListTest, ConstructorTest) {
     EXPECT_TRUE(node == nullptr);
 }
 
-TEST(LinkedListTest, GetStringTest) {
+TEST(LinkedList, GetString) {
     std::vector<int> all_nodes = {};
     Node* node = new Node(all_nodes);
     EXPECT_EQ(node->getString(), "0");
@@ -33,7 +33,7 @@ TEST(LinkedListTest, GetStringTest) {
 }
 
 
-TEST(LinkedListTest, SwapEverySecondTest) {
+TEST(LinkedList, SwapEverySecond) {
     std::vector<int> all_nodes = {};
     Node* node = new Node(all_nodes);
     node = swapEverySecondNode(node);
@@ -58,6 +58,23 @@ TEST(LinkedListTest, SwapEverySecondTest) {
     EXPECT_EQ(node->getString(), "1 -> 2 -> 3 -> 4 -> 5");
     node = swapEverySecondNode(node);
     EXPECT_EQ(node->getString(), "2 -> 1 -> 4 -> 3 -> 5");
+}
+
+
+TEST(LinkedList, HasLoop) {
+    EXPECT_FALSE(hasLoop(nullptr));
+    std::vector<int> all_nodes = {};
+    Node* node = new Node(all_nodes);
+    EXPECT_FALSE(hasLoop(node));
+    all_nodes = {1, 2, 3};
+    node = new Node(all_nodes);
+    EXPECT_FALSE(hasLoop(node));
+    node->getNext()->getNext()->setNext(node);
+    EXPECT_TRUE(hasLoop(node));
+    node = new Node(all_nodes);
+    node->getNext()->getNext()->setNext(node->getNext());
+    EXPECT_TRUE(hasLoop(node));
+
 }
 
 int main(int argc, char **argv) {
