@@ -8,16 +8,16 @@ Repository with data structures and algorithms.
 
 ## How to install requirements on Ubuntu:
 
-* cmake:
+### cmake:
     sudo apt install cmake
 
-* GTest:
+### GTest:
     sudo apt install libgtest-dev
     cd /usr/src/gtest
     sudo cmake .
     sudo make
     sudo cp *.a /usr/lib
-
+    
 ## To compile the project, in the main project folder run the following commands:
     mkdir build && cd build
     cmake ..
