@@ -8,10 +8,8 @@ endif()
 
 project(data_structures_algorithms)
 
-add_library (LinkedList data_structures/LinkedList.cpp algorithms/swap_every_second_node.cpp
-        algorithms/has_loop.cpp)
-
-target_include_directories (LinkedList PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+add_library (LinkedList INTERFACE)
+target_include_directories(LinkedList INTERFACE .)
 
 find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})

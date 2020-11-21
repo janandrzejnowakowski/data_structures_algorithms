@@ -9,20 +9,23 @@
 #include <vector>
 #include <string>
 
+template <class T>
 class Node {
-    int value;
+    T value;
     Node* next;
 public:
     Node();
-    Node(int);
-    Node(int, Node*);
-    Node(std::vector<int>);
+    explicit Node(T);
+    Node(T, Node<T>*);
+    Node(std::vector<T>);
     ~Node();
-    int getValue();
-    void setValue(int);
-    Node* getNext();
-    void setNext(Node*);
+    T getValue();
+    void setValue(T);
+    Node<T>* getNext();
+    void setNext(Node<T>*);
     std::string getString();
 };
+
+#include "data_structures/LinkedList.tpp"
 
 #endif //DATA_STRUCTURES_ALGORITHMS_LINKEDLIST_H

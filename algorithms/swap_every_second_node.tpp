@@ -6,13 +6,14 @@
 #include <iostream>
 #include "data_structures/LinkedList.h"
 
-Node* swapEverySecondNode(Node* head)
+template <class T>
+Node<T>* swapEverySecondNode(Node<T>* head)
 {
     if (!head || !head->getNext())
         return head;
-    Node* new_head = head->getNext();
-    Node* current = head;
-    Node *tail, *temp;
+    Node<T>* new_head = head->getNext();
+    Node<T>* current = head;
+    Node<T> *tail, *temp;
     unsigned node_number = 0;
     while (current) {
         temp = current->getNext();
@@ -33,13 +34,14 @@ Node* swapEverySecondNode(Node* head)
     return new_head;
 }
 
-void swapEverySecondNodeByValue(Node* head)
+template <class T>
+void swapEverySecondNodeByValue(Node<T>* head)
 {
     if (!head || !head->getNext())
         return;
-    Node* current = head;
+    Node<T>* current = head;
     while (current && current->getNext()) {
-        int temp = current->getValue();
+        T temp = current->getValue();
         current->setValue(current->getNext()->getValue());
         current->getNext()->setValue(temp);
         current = current->getNext()->getNext();

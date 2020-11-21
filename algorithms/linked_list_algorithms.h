@@ -1,16 +1,21 @@
 //
-// Created by noj on 20.11.20.
+// Created by noj on 15.11.20.
 //
-// linked_list_algorithms.h
-
-#ifndef DATA_STRUCTURES_ALGORITHMS_LINKED_LIST_ALGORITHMS_H
-#define DATA_STRUCTURES_ALGORITHMS_LINKED_LIST_ALGORITHMS_H
+// swap_every_second_node.h
 
 #include "data_structures/LinkedList.h"
 
-Node* swapEverySecondNode(Node* head);
-void swapEverySecondNodeByValue(Node* head);
-bool hasLoop(Node* head);
+#ifndef LINKED_LIST_ALGORITHMS_H
+#define LINKED_LIST_ALGORITHMS_H
 
+template <class T>
+Node<T>* swapEverySecondNode(Node<T>* head);
+template <class T>
+void swapEverySecondNodeByValue(Node<T>* head);
+template <class T>
+bool hasLoop(Node<T>* head);
 
-#endif //DATA_STRUCTURES_ALGORITHMS_LINKED_LIST_ALGORITHMS_H
+#include "algorithms/has_loop.tpp"
+#include "algorithms/swap_every_second_node.tpp"
+
+#endif
