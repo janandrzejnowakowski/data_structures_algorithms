@@ -12,18 +12,17 @@
 template <class T>
 class SLLNode {
     T value;
-    SLLNode* next;
+    SLLNode<T>* next;
 public:
     SLLNode();
     explicit SLLNode(T);
-    SLLNode(T, SLLNode<T>*);
-    SLLNode(std::vector<T>);
+    explicit SLLNode(std::vector<T>);
     ~SLLNode();
     T getValue();
     void setValue(T);
     SLLNode<T>* getNext();
     void setNext(SLLNode<T>*);
-    std::string getString(std::string = " -> ");
+    std::string getString(const std::string& = " -> ");
 };
 
 #include "data_structures/SinglyLinkedList.tpp"

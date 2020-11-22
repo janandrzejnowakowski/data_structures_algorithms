@@ -10,8 +10,6 @@ template <class T>
 SLLNode<T>::SLLNode() : value(0), next(nullptr) {}
 template <class T>
 SLLNode<T>::SLLNode(T val) : value(val), next(nullptr) {}
-template <class T>
-SLLNode<T>::SLLNode(T val, SLLNode<T>* node) : value(val), next(node) {}
 
 template <class T>
 SLLNode<T>::SLLNode(std::vector<T> vec)
@@ -57,7 +55,7 @@ void SLLNode<T>::setNext(SLLNode* node)
 }
 
 template <class T>
-std::string SLLNode<T>::getString(std::string connector)
+std::string SLLNode<T>::getString(const std::string& connector)
 {
     std::string ret = std::to_string(value);
     SLLNode<T>* current = getNext();
