@@ -1,1 +1,8 @@
+- Tree
+- Binary tree
+- Binary search tree
+- Heap
+- Trie and an autocomplete system
+- Queue
 - Linked list is palindrome (doubly/singly)
+- Sudoku solver
