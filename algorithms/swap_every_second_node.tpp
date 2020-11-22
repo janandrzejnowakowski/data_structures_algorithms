@@ -4,16 +4,16 @@
 // swap_every_second_node.cpp
 
 #include <iostream>
-#include "data_structures/LinkedList.h"
+#include "data_structures/SinglyLinkedList.h"
 
 template <class T>
-Node<T>* swapEverySecondNode(Node<T>* head)
+SLLNode<T>* swapEverySecondSLLNode(SLLNode<T>* head)
 {
     if (!head || !head->getNext())
         return head;
-    Node<T>* new_head = head->getNext();
-    Node<T>* current = head;
-    Node<T> *tail, *temp;
+    SLLNode<T>* new_head = head->getNext();
+    SLLNode<T>* current = head;
+    SLLNode<T> *tail, *temp;
     unsigned node_number = 0;
     while (current) {
         temp = current->getNext();
@@ -35,11 +35,11 @@ Node<T>* swapEverySecondNode(Node<T>* head)
 }
 
 template <class T>
-void swapEverySecondNodeByValue(Node<T>* head)
+void swapEverySecondSLLNodeByValue(SLLNode<T>* head)
 {
     if (!head || !head->getNext())
         return;
-    Node<T>* current = head;
+    SLLNode<T>* current = head;
     while (current && current->getNext()) {
         T temp = current->getValue();
         current->setValue(current->getNext()->getValue());

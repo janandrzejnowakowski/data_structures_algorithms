@@ -4,66 +4,66 @@
 // LinkedList.cpp
 
 #include <vector>
-#include "LinkedList.h"
+#include "SinglyLinkedList.h"
 
 template <class T>
-Node<T>::Node() : value(0), next(nullptr) {}
+SLLNode<T>::SLLNode() : value(0), next(nullptr) {}
 template <class T>
-Node<T>::Node(T val) : value(val), next(nullptr) {}
+SLLNode<T>::SLLNode(T val) : value(val), next(nullptr) {}
 template <class T>
-Node<T>::Node(T val, Node<T>* node) : value(val), next(node) {}
+SLLNode<T>::SLLNode(T val, SLLNode<T>* node) : value(val), next(node) {}
 
 template <class T>
-Node<T>::Node(std::vector<T> vec)
+SLLNode<T>::SLLNode(std::vector<T> vec)
 {
-    Node<T>* current = this;
+    SLLNode<T>* current = this;
     current->value = vec.empty() ? 0 : vec[0];
     current->setNext(nullptr);
     for (unsigned i = 1; i < vec.size(); ++i)
     {
-        current->setNext(new Node<T>(vec[i]));
+        current->setNext(new SLLNode<T>(vec[i]));
         current = current->getNext();
     }
 }
 
 template <class T>
-Node<T>::~Node()
+SLLNode<T>::~SLLNode()
 {
     delete next;
 }
 
 template <class T>
-T Node<T>::getValue()
+T SLLNode<T>::getValue()
 {
     return value;
 }
 
 template <class T>
-void Node<T>::setValue(T val)
+void SLLNode<T>::setValue(T val)
 {
     value = val;
 }
 
 template <class T>
-Node<T>* Node<T>::getNext()
+SLLNode<T>* SLLNode<T>::getNext()
 {
     return next;
 }
 
 template <class T>
-void Node<T>::setNext(Node* node)
+void SLLNode<T>::setNext(SLLNode* node)
 {
     next = node;
 }
 
 template <class T>
-std::string Node<T>::getString()
+std::string SLLNode<T>::getString(std::string connector)
 {
     std::string ret = std::to_string(value);
-    Node<T>* current = getNext();
+    SLLNode<T>* current = getNext();
     while (current)
     {
-        ret += " -> " + std::to_string(current->getValue());
+        ret += connector + std::to_string(current->getValue());
         current = current->getNext();
     }
     return ret;

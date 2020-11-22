@@ -3,14 +3,14 @@
 //
 // has_loop.tpp
 
-#include "data_structures/LinkedList.h"
+#include "data_structures/SinglyLinkedList.h"
 
 template <class T>
-bool hasLoop(Node<T>* head) {
+bool hasLoop(SLLNode<T>* head) {
     if (!head || !head->getNext())
         return false;
-    Node<T>* slow = head;
-    Node<T>* fast = head->getNext();
+    SLLNode<T>* slow = head;
+    SLLNode<T>* fast = head->getNext();
     while (true) {
         if (!fast->getNext() || !fast->getNext()->getNext())
             return false;
