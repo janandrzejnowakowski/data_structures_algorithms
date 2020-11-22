@@ -9,7 +9,7 @@
 #include "data_structures/DoublyLinkedList.h"
 #include "algorithms/linked_list_algorithms.h"
 
-TEST(SinglyLinkedListTest, ConstructorTest)
+TEST(SinglyLinkedList, Constructor)
 {
     std::vector<int> all_nodes = {};
     auto* node = new SLLNode<int>(all_nodes);
@@ -28,7 +28,7 @@ TEST(SinglyLinkedListTest, ConstructorTest)
     delete node;
 }
 
-TEST(SinglyLinkedListTest, GetStringTest)
+TEST(SinglyLinkedList, GetString)
 {
     std::vector<int> all_nodes = {};
     auto* node = new SLLNode<int>(all_nodes);
@@ -42,7 +42,7 @@ TEST(SinglyLinkedListTest, GetStringTest)
 }
 
 
-TEST(SinglyLinkedListTest, SwapEverySecondTest)
+TEST(SinglyLinkedList, SwapEverySecond)
 {
     std::vector<int> all_nodes = {};
     auto* node = new SLLNode<int>(all_nodes);
@@ -99,7 +99,7 @@ TEST(SinglyLinkedList, HasLoop)
     delete node;
 }
 
-TEST(DoublyLinkedListTest, ConstructorTest)
+TEST(DoublyLinkedList, Constructor)
 {
     std::vector<int> all_nodes = {};
     auto* node = new DLLNode<int>(all_nodes);
@@ -124,7 +124,7 @@ TEST(DoublyLinkedListTest, ConstructorTest)
     delete node;
 }
 
-TEST(DoublyLinkedListTest, GetStringTest)
+TEST(DoublyLinkedList, GetString)
 {
     std::vector<int> all_nodes = {};
     auto* node = new DLLNode<int>(all_nodes);
