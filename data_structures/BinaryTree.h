@@ -20,7 +20,7 @@ public:
     void setValue(T);
     BinaryTree<T>* getLeft();
     BinaryTree<T>* getRight();
-//    std::string getInOrderString(std::string);
+    std::string getString();
 
 };
 

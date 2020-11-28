@@ -56,8 +56,11 @@ BinaryTree<T>* BinaryTree<T>::getRight()
     return right;
 }
 
-//template <class T>
-//std::string BinaryTree<T>::getInOrderString(std::string& current)
-//{
-//
-//}
+template <class T>
+std::string BinaryTree<T>::getString()
+{
+    std::string l = getLeft() ? getLeft()->getString() : "";
+    std::string r = getRight() ? getRight()->getString() : "";
+    return l + " " + std::to_string(value) + r;
+
+}
