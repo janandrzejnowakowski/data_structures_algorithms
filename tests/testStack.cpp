@@ -5,7 +5,7 @@
 #include <gtest/gtest.h>
 #include <iostream>
 #include "data_structures/Stack.h"
-#include "algorithms/are_valid_brackets.cpp"
+#include "algorithms/stack_algorithms.h"
 
 TEST(Stack, Constructor)
 {
