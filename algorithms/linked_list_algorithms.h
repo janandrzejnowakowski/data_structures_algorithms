@@ -10,8 +10,10 @@
 
 template <class T>
 SLLNode<T>* swapEverySecondSLLNode(SLLNode<T>* head);
+
 template <class T>
 void swapEverySecondSLLNodeByValue(SLLNode<T>* head);
+
 template <class T>
 bool hasLoop(SLLNode<T>* head);
 

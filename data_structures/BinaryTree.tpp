@@ -33,6 +33,18 @@ void BinaryTree<T>::setRight(T val)
 }
 
 template <class T>
+void BinaryTree<T>::setLeft(BinaryTree<T>* tree)
+{
+    left = tree;
+}
+
+template <class T>
+void BinaryTree<T>::setRight(BinaryTree<T>* tree)
+{
+    right = tree;
+}
+
+template <class T>
 T BinaryTree<T>::getValue()
 {
     return value;

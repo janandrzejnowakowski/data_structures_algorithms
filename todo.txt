@@ -1,5 +1,4 @@
 - Tree
-- Binary tree
 - Binary search tree
 - Heap
 - Trie and an autocomplete system

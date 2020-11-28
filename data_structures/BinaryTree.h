@@ -16,6 +16,8 @@ public:
     ~BinaryTree();
     void setLeft(T);
     void setRight(T);
+    void setLeft(BinaryTree<T>*);
+    void setRight(BinaryTree<T>*);
     T getValue();
     void setValue(T);
     BinaryTree<T>* getLeft();

@@ -7,6 +7,7 @@
 #include <iostream>
 #include "data_structures/BinaryTree.h"
 #include "data_structures/EquationBinaryTree.h"
+#include "algorithms/binary_tree_algorithms.h"
 
 TEST(BinaryTree, Constructor)
 {
@@ -35,6 +36,21 @@ TEST(BinaryTree, GetString)
     EXPECT_EQ(bt->getString(), " 6 1 5 2 3 4");
     bt->getRight()->setLeft(7);
     EXPECT_EQ(bt->getString(), " 6 1 5 2 7 3 4");
+    delete bt;
+}
+
+TEST(BinaryTree, ReverseBinaryTree)
+{
+    auto* bt = new BinaryTree<int>(2);
+    bt->setLeft(1);
+    bt->setRight(3);
+    bt->getRight()->setRight(4);
+    bt->getLeft()->setRight(5);
+    bt->getLeft()->setLeft(6);
+    bt->getRight()->setLeft(7);
+    EXPECT_EQ(bt->getString(), " 6 1 5 2 7 3 4");
+    reverseBinaryTree(bt);
+    EXPECT_EQ(bt->getString(), " 4 3 7 2 5 1 6");
     delete bt;
 }
 
