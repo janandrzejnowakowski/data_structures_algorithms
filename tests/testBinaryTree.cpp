@@ -6,6 +6,7 @@
 #include <gtest/gtest.h>
 #include <iostream>
 #include "data_structures/BinaryTree.h"
+#include "data_structures/EquationBinaryTree.h"
 
 TEST(BinaryTree, Constructor)
 {
@@ -35,6 +36,19 @@ TEST(BinaryTree, GetString)
     bt->getRight()->setLeft(7);
     EXPECT_EQ(bt->getString(), " 6 1 5 2 7 3 4");
     delete bt;
+}
+
+TEST(EquationBinaryTree, GetString)
+{
+    auto* bt = new EBT({"+", "-", "*"}, {1, 2, 3, 4});
+    EXPECT_EQ(bt->getString(false), "((1.000000 - 2.000000) + (3.000000 * 4.000000))");
+    EXPECT_EQ(bt->getString(true), "((1.000000 - 2.000000) + (3.000000 * 4.000000)) = 11.000000");
+    EXPECT_EQ(bt->calculateValue(), 11);
+    delete bt;
+    auto* bt2 = new EBT({"+", "-", "*", "+", "-", "*", "/"}, {13, 7, 3, 4, 11, 2, 16, 8});
+    EXPECT_EQ(bt2->getString(true), "(((13.000000 + 7.000000) - (3.000000 - 4.000000)) + ((11.000000 * 2.000000) * (16.000000 / 8.000000))) = 65.000000");
+    EXPECT_EQ(bt2->calculateValue(), 65);
+    delete bt2;
 }
 
 int main(int argc, char **argv)

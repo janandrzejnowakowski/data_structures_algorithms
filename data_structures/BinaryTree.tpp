@@ -61,6 +61,10 @@ std::string BinaryTree<T>::getString()
 {
     std::string l = getLeft() ? getLeft()->getString() : "";
     std::string r = getRight() ? getRight()->getString() : "";
-    return l + " " + std::to_string(value) + r;
-
+    std::string val;
+    if constexpr(std::is_same_v<T, std::string>)
+        val = value;
+    else
+        val = std::to_string(value);
+    return l + " " + val + r;
 }
