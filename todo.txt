@@ -1,7 +1,11 @@
 - Tree
-- Binary search tree
 - Heap
 - Trie and an autocomplete system
 - Queue
 - Linked list is palindrome (doubly/singly)
 - Sudoku solver
+
+
+BST:
+- add remove function
+- add balancing function

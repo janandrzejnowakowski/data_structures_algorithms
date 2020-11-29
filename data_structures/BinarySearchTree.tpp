@@ -54,10 +54,10 @@ BST<T>::~BST()
 }
 
 template <class T>
-bool BST<T>::find(T val)
+BST<T>* BST<T>::find(T val)
 {
     if (value == val)
-        return true;
+        return this;
     if (value > val && left)
     {
         return left->find(val);
@@ -66,8 +66,15 @@ bool BST<T>::find(T val)
         return right->find(val);
     } else
     {
-        return false;
+        return nullptr;
     }
+}
+
+template <class T>
+bool BST<T>::has(T val)
+{
+    BST* res = find(val);
+    return res != nullptr;
 }
 
 template <class T>
@@ -107,4 +114,3 @@ void BST<T>::insert(T val)
         }
     }
 }
-//template <class T>

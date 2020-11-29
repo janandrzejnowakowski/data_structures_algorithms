@@ -13,13 +13,13 @@ class BST {
     unsigned instances = 0;
     BST* left;
     BST* right;
+    BST* find(T val);
 public:
     BST(T);
     BST(std::vector<T>);
     ~BST();
     void insert(T);
-    bool remove(T);
-    bool find(T);
+    bool has(T);
 };
 
 #include "data_structures/BinarySearchTree.tpp"

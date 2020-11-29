@@ -72,13 +72,13 @@ TEST(EquationBinaryTree, GetString)
 TEST(BinarySearchTree, Constructor)
 {
     auto* bt = new BST<int>({4, 1, 2, 3, 14});
-    EXPECT_TRUE(bt->find(4));
-    EXPECT_TRUE(bt->find(1));
-    EXPECT_TRUE(bt->find(3));
-    EXPECT_TRUE(bt->find(14));
-    EXPECT_FALSE(bt->find(11));
+    EXPECT_TRUE(bt->has(4));
+    EXPECT_TRUE(bt->has(1));
+    EXPECT_TRUE(bt->has(3));
+    EXPECT_TRUE(bt->has(14));
+    EXPECT_FALSE(bt->has(11));
     bt->insert(11);
-    EXPECT_TRUE(bt->find(11));
+    EXPECT_TRUE(bt->has(11));
     delete bt;
 }
 
