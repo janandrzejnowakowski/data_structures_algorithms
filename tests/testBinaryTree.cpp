@@ -8,6 +8,7 @@
 #include "data_structures/BinaryTree.h"
 #include "data_structures/EquationBinaryTree.h"
 #include "algorithms/binary_tree_algorithms.h"
+#include "data_structures/BinarySearchTree.h"
 
 TEST(BinaryTree, Constructor)
 {
@@ -65,6 +66,20 @@ TEST(EquationBinaryTree, GetString)
     EXPECT_EQ(bt2->getString(true), "(((13.000000 + 7.000000) - (3.000000 - 4.000000)) + ((11.000000 * 2.000000) * (16.000000 / 8.000000))) = 65.000000");
     EXPECT_EQ(bt2->calculateValue(), 65);
     delete bt2;
+}
+
+
+TEST(BinarySearchTree, Constructor)
+{
+    auto* bt = new BST<int>({4, 1, 2, 3, 14});
+    EXPECT_TRUE(bt->find(4));
+    EXPECT_TRUE(bt->find(1));
+    EXPECT_TRUE(bt->find(3));
+    EXPECT_TRUE(bt->find(14));
+    EXPECT_FALSE(bt->find(11));
+    bt->insert(11);
+    EXPECT_TRUE(bt->find(11));
+    delete bt;
 }
 
 int main(int argc, char **argv)
