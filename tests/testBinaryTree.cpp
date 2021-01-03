@@ -66,6 +66,12 @@ TEST(EquationBinaryTree, GetString)
     EXPECT_EQ(bt2->getString(true), "(((13.000000 + 7.000000) - (3.000000 - 4.000000)) + ((11.000000 * 2.000000) * (16.000000 / 8.000000))) = 65.000000");
     EXPECT_EQ(bt2->calculateValue(), 65);
     delete bt2;
+    auto* bt3 = new EBT({"x"}, {3, 4});
+    EXPECT_EQ(bt3->calculateValue(), 0);
+    delete bt3;
+    auto* bt4 = new EBT({"+", "-", "*"}, {1, 2, 3, 4, 5});
+    EXPECT_EQ(bt4->calculateValue(), 0);
+    delete bt4;
 }
 
 
@@ -79,6 +85,12 @@ TEST(BinarySearchTree, Constructor)
     EXPECT_FALSE(bt->has(11));
     bt->insert(11);
     EXPECT_TRUE(bt->has(11));
+    bt->insert(11);
+    EXPECT_TRUE(bt->has(11));
+    bt->insert(1);
+    EXPECT_TRUE(bt->has(1));
+    bt->insert(16);
+    EXPECT_TRUE(bt->has(16));
     delete bt;
 }
 

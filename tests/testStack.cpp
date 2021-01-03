@@ -39,6 +39,8 @@ TEST(Stack, AreValidBrackets)
     EXPECT_TRUE(areValidBrackets("{([]){}}"));
     EXPECT_FALSE(areValidBrackets("{([]){}}{"));
     EXPECT_TRUE(areValidBrackets("()"));
+    EXPECT_FALSE(areValidBrackets("(b)"));
+    EXPECT_FALSE(areValidBrackets("(]"));
 }
 
 int main(int argc, char **argv)

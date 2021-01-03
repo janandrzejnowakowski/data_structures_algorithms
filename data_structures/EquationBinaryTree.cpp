@@ -24,11 +24,17 @@ EBT::EBT(const std::vector<std::string> &operations, const std::vector<double> &
     if (test_value != num_size || num_size != op_size + 1)
     {
         std::cout << "Invalid relation between the number of numbers and operations. Size of numbers needs to be equal to the size of operations + 1" << std::endl;
+        left = nullptr;
+        right = nullptr;
+        value = "0";
         return;
     }
     if (!(operations[0] == "+" || operations[0] == "-" || operations[0] == "*" || operations[0] == "/"))
     {
         std::cout << "Invalid operation string: " << operations[0] << std::endl;
+        left = nullptr;
+        right = nullptr;
+        value = "0";
         return;
     }
     value = operations[0];
@@ -73,16 +79,14 @@ double EBT::calculateValue()
 {
     if (!left || !right)
         return std::stod(value);
-    if (value == "+")
+    else if (value == "+")
         return left->calculateValue() + right->calculateValue();
-    if (value == "-")
+    else if (value == "-")
         return left->calculateValue() - right->calculateValue();
-    if (value == "*")
+    else if (value == "*")
         return left->calculateValue() * right->calculateValue();
-    if (value == "/")
+    else
         return left->calculateValue() / right->calculateValue();
-    std::cout << "ERROR: unrecognized operation " << value << std::endl;
-    return 0;
 }
 
 std::string EBT::getString(bool show_result)
