@@ -1,5 +1,7 @@
 # data_structures_algorithms
 
+[![Build Status](https://travis-ci.com/janandrzejnowakowski/data_structures_algorithms.svg?branch=main)](https://travis-ci.com/janandrzejnowakowski/data_structures_algorithms)
+
 Repository with data structures and algorithms.
 
 ## Requirements:
@@ -13,10 +15,6 @@ Repository with data structures and algorithms.
 
 ### GTest:
     sudo apt install libgtest-dev
-    cd /usr/src/gtest
-    sudo cmake .
-    sudo make
-    sudo cp *.a /usr/lib
     
 ## To compile the project, in the main project folder run the following commands:
     mkdir build && cd build
