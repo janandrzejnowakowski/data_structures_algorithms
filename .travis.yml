@@ -10,3 +10,4 @@ before_install:
 script:
   - cmake .
   - cmake --build . -- -j2
+  - bash <(curl -s https://codecov.io/bash)
