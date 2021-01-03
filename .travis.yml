@@ -8,6 +8,9 @@ before_install:
   - sudo apt-get -y install libgtest-dev
 
 script:
-  - cmake .
+  - CXX=/usr/bin/g++ CC=/usr/bin/gcc cmake . -D ENABLE_COVERAGE:BOOL=TRUE
   - cmake --build . -- -j2
+  - ./testBinaryTree
+  - ./testLinkedList
+  - ./testStack
   - bash <(curl -s https://codecov.io/bash)
