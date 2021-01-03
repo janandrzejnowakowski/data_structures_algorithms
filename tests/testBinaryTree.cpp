@@ -20,6 +20,8 @@ TEST(BinaryTree, Constructor)
     EXPECT_TRUE(bt->getRight()->getValue() == 9);
     bt->setRight(19);
     EXPECT_TRUE(bt->getRight()->getValue() == 19);
+    bt->setLeft(17);
+    EXPECT_TRUE(bt->getLeft()->getValue() == 17);
     delete bt;
 }
 
